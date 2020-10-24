@@ -10,7 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	$sql->execute();
 	$sql->setFetchMode(PDO::FETCH_ASSOC);
 	header("HTTP/1.1 200 OK");
-	$json['categoria'] = $sql->fetchAll();
-	echo json_encode($json);
+	//$json['categoria'] = $sql->fetchAll();
+	//echo json_encode($json);
+	echo json_encode( $sql->fetchAll()  );
 	exit();
 }
