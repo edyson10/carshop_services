@@ -1,0 +1,1 @@
+Para usar estos servicios adecuadamente debe de crear una base de datos que se llame carshop con atojamiento utf-8 spanish-2 y ya.
