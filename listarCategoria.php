@@ -3,6 +3,8 @@
 include "conexion.php";
 include "utils.php";
 
+header('Content-Type: application/json');
+
 $dbConn =  connect($db);
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -12,6 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'){
 	header("HTTP/1.1 200 OK");
 	//$json['categoria'] = $sql->fetchAll();
 	//echo json_encode($json);
-	echo json_encode( $sql->fetchAll()  );
+	echo json_encode($sql->fetchAll());
 	exit();
 }
+
+//En caso de que ninguna de las opciones anteriores se haya ejecutado
+header("HTTP/1.1 400 Bad Request");
